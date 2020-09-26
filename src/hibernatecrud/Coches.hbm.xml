@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2019 20:07:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernatecrud.Coches" table="coches" catalog="concesionario" optimistic-lock="version">
+        <id name="idcoche" type="int">
+            <column name="idcoche" />
+            <generator class="assigned" />
+        </id>
+        <property name="NBastidor" type="string">
+            <column name="n_bastidor" length="17" not-null="true" />
+        </property>
+        <property name="marca" type="string">
+            <column name="marca" length="15" not-null="true" />
+        </property>
+        <property name="modelo" type="string">
+            <column name="modelo" length="15" not-null="true" />
+        </property>
+        <set name="proveedoreses" table="proveedores" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="idcoche" />
+            </key>
+            <one-to-many class="hibernatecrud.Proveedores" />
+        </set>
+    </class>
+</hibernate-mapping>

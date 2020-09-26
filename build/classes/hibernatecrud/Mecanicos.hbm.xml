@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 24-ene-2019 20:07:29 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="hibernatecrud.Mecanicos" table="mecanicos" catalog="concesionario" optimistic-lock="version">
+        <id name="idmecanico" type="java.lang.Integer">
+            <column name="idmecanico" />
+            <generator class="identity" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="25" not-null="true" />
+        </property>
+        <property name="dni" type="string">
+            <column name="dni" length="9" not-null="true" />
+        </property>
+        <property name="tlf" type="string">
+            <column name="tlf" length="9" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
